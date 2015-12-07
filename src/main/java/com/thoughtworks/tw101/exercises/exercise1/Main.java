@@ -4,16 +4,14 @@ package com.thoughtworks.tw101.exercises.exercise1;
 
 public class Main {
     public static void main(String[] args) {
-        int counter = 0;
+        int counter = 1;
         int sum = 0;
 
         while (counter < 100) {
-            if (counter % 2 != 0){
-                System.out.println(counter);
-                sum += counter;
-            }
+            System.out.println(counter);
+            sum += counter;
 
-            counter += 1;
+            counter += 2;
         }
 
         System.out.println(sum);
