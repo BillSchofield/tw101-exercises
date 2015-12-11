@@ -14,9 +14,21 @@ public class Main {
         };
 
         Library library = new Library(books, System.out);
+
+        System.out.println("Match word: Potter");
         library.printBooksContaining("Potter");
+        System.out.println("-----------------\n");
+
+        System.out.println("Match word: Sorcerer");
         library.printBooksContaining("Sorcerer");
+        System.out.println("-----------------\n");
+
+        System.out.println("Match word: Intro");
         library.printBooksContaining("Intro");
+        System.out.println("-----------------\n");
+
+        System.out.println("Match word: Stone");
         library.printBooksContaining("Stone");
+        System.out.println("-----------------\n");
     }
 }
