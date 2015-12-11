@@ -12,5 +12,15 @@ public class Library {
     }
 
     public void printBooksContaining(String partialBookTitle) {
+
+        for(String book : books){
+            if(phraseMatch(book, partialBookTitle)){
+                printStream.println(book);
+            }
+        }
+    }
+
+    private boolean phraseMatch(String phrase, String partial){
+        return phrase.contains(partial);
     }
 }
