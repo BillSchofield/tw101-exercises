@@ -7,7 +7,7 @@ public class GuessingGame {
 
     public GuessingGame(int maxBound) {
         secretNumber = (int) (Math.random() * maxBound);
-        System.out.println("FYI, the secret number is: " + secretNumber);
+//        System.out.println("FYI, the secret number is: " + secretNumber);
     }
 
 
@@ -17,6 +17,7 @@ public class GuessingGame {
         notify("Try to guess a randomly generated number, between 1 and 100.");
         notify("PSA: Please only use digits in your guess. For example '79' not 'seventy-nine'.");
         notify(border());
+        notify("");
     }
 
     public void takeGuesses() {
@@ -36,6 +37,7 @@ public class GuessingGame {
         if (num == secretNumber) {
             isGuessed = true;
             notify("oooOOOoo!");
+            notify("");
         } else if (num < secretNumber) {
             notify("Too low!");
         } else if (num > secretNumber) {
@@ -46,7 +48,9 @@ public class GuessingGame {
     }
 
     public void finishUp() {
+        notify(border());
         notify("Well done! You guessed the secret number, " + secretNumber + ".");
+        notify(border());
     }
 
     private void notify(String message){
@@ -56,7 +60,5 @@ public class GuessingGame {
     private String border() {
         return "%%%%%%%%%%%%%%%%%%%%";
     }
-
-
 
 }
