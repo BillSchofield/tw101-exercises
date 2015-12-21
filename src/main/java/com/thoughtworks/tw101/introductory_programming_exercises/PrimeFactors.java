@@ -11,27 +11,31 @@ import java.util.List;
 
 public class PrimeFactors {
     public static void main(String[] args) {
-        List<Integer> primeFactors = generate(10);
+        List<Integer> primeFactors = generate(30);
 
         for( int factor : primeFactors){
             System.out.println(factor);
         }
     }
 
-    private static List<Integer> generate(int n) {
+    private static List<Integer> generate(int n, int divisor){
 
-        List<Integer> factors = new ArrayList<>();
-        int divisor = 2;
-
-        while (n > 1) {
-            if (n % divisor == 0){
-                factors.add(divisor);
-                n /= divisor;
-            } else {
-                divisor += 1;
-            }
+        if (n < 2){
+            return new ArrayList<>();
         }
 
-        return factors;
+        if (n % divisor == 0) {
+            List<Integer> factors = generate((n/divisor), divisor);
+            factors.add(divisor);
+            return factors;
+        } else {
+            return generate(n, divisor + 1);
+        }
+
+    }
+
+    private static List<Integer> generate(int n) {
+
+        return generate(n, 2);
     }
 }
