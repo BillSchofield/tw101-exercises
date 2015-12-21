@@ -6,7 +6,7 @@ public class GuessingGame {
     private GameHelper helper = new GameHelper();
 
     public GuessingGame(int maxBound) {
-        secretNumber = (int) (Math.random() * maxBound);
+        secretNumber = (int) (Math.random() * (maxBound + 1));
 //        System.out.println("FYI, the secret number is: " + secretNumber);
     }
 
