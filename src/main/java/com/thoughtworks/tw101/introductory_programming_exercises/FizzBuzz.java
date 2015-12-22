@@ -32,6 +32,14 @@ public class FizzBuzz {
     }
 
     private static void fizzBuzz() {
+        for(int i = 1; i < 101; i++) {
+            String fizzOrBuzz = "";
 
+            if (i % 3 == 0) fizzOrBuzz += "Fizz";
+            if (i % 5 == 0) fizzOrBuzz += "Buzz";
+
+            Object result = (fizzOrBuzz.length() > 0) ? fizzOrBuzz : i;
+            System.out.println(result);
+        }
     }
 }
