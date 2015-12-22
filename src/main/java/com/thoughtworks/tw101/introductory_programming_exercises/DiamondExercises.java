@@ -77,15 +77,12 @@ public class DiamondExercises {
     private static String centeredRow(String stars, int width) {
 
         int padding = width - stars.length();
-//        System.out.println("Current Padding is: " + padding);
-//        System.out.println("Current Stars Size is: " + stars.length());
 
         if (padding == 0) {
             return stars;
         } else {
             int sizeWithRightPadding = stars.length() + (padding / 2);
-            String formattedString = String.format("%" + sizeWithRightPadding + "s", stars);
-            return formattedString;
+            return String.format("%" + sizeWithRightPadding + "s", stars);
         }
 
     }
