@@ -17,7 +17,13 @@ public class Main {
         root.add("Sue-Ellen");
         root.add("Sara");
         root.add("Casey");
+        root.add("Rebecca");
 
+        printer(root);
+    }
+
+
+    public static void printer(Node root) {
         List<String> names = root.names();
 
         for (String name : names) {
