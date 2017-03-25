@@ -1,10 +1,12 @@
 package com.thoughtworks.tw101.exercises.exercise6;
 
 public class Orc implements Monster {
-    public int hitpoints;
+    private int hitpoints;
+    private String name;
 
     public Orc() {
         hitpoints = 20;
+        name = "Orc";
     }
 
     public void takeDamage(int amount) {
@@ -12,7 +14,7 @@ public class Orc implements Monster {
     }
 
     public void reportStatus() {
-        System.out.println("Current health: " + hitpoints);
+        System.out.println(String.format("%s: %s hitpoints", name, hitpoints));
     }
 
 }
