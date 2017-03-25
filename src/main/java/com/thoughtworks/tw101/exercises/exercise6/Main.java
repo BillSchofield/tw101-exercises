@@ -21,5 +21,11 @@ public class Main {
 
         orc1.reportStatus();
 
+        Troll troll1 = new Troll();
+
+        troll1.takeDamage(10);
+
+        troll1.reportStatus();
+
     }
 }
