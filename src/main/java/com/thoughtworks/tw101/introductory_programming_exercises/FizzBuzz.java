@@ -32,6 +32,27 @@ public class FizzBuzz {
     }
 
     private static void fizzBuzz() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println(convertNumber(i));
+        }
+
+    }
+    private static String convertNumber(int number) {
+        String output = "";
+
+        if (number % 3 == 0) {
+            output += ("Fizz");
+        }
+
+        if (number % 5 == 0) {
+            output += ("Buzz");
+        }
+
+        if (output == "") {
+            output += number;
+        }
+
+        return output;
 
     }
 }
