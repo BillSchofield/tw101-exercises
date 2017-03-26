@@ -41,14 +41,14 @@ public class FizzBuzz {
         String output = "";
 
         if (number % 3 == 0) {
-            output += ("Fizz");
+            output += "Fizz";
         }
 
         if (number % 5 == 0) {
-            output += ("Buzz");
+            output += "Buzz";
         }
 
-        if (output == "") {
+        if (output.equals("")) {
             output += number;
         }
 
