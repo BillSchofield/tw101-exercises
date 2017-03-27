@@ -8,5 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        NumberGuesser game = new NumberGuesser();
+
+        game.play();
+
     }
 }
