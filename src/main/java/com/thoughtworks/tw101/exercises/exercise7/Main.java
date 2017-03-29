@@ -7,8 +7,6 @@ package com.thoughtworks.tw101.exercises.exercise7;
 public class Main {
 
     public static void main(String[] args) {
-        NumberGuesser game = new NumberGuesser();
-
-        game.play();
+        new NumberGuesser().play();
     }
 }
