@@ -12,31 +12,23 @@ public class NumberGuesser {
     }
 
     public void play() {
-
-        System.out.println("DEBUG: The secret number is " + secretNumber);
-
         Scanner input = new Scanner(System.in);
 
         do {
-            System.out.println("Please enter a guess");
-
+            System.out.print(Messages.requestGuess());
             guess = input.nextInt();
-
-            System.out.println("Your guess is " + guess);
-
             checkGuess(guess);
-
         } while (guess != secretNumber);
 
-        System.out.println("You guessed the number!");
     }
 
     private void checkGuess(int guess) {
-        if (guess < secretNumber && guess > 0) {
-           System.out.println("Guess is too low");
+        if (guess == secretNumber) {
+            System.out.println(Messages.winGame(secretNumber));
+        } else if (guess < secretNumber && guess > 0) {
+           System.out.println(Messages.low());
         } else {
-            System.out.println("Guess is too high");
+            System.out.println(Messages.high());
         }
-
     }
 }
