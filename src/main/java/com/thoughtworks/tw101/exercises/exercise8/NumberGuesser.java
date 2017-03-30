@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class NumberGuesser {
     private int secretNumber;
-    private int guess;
+    private int currentGuess;
 
     public NumberGuesser() {
         secretNumber = (int) (Math.random() * 100 + 1);
-        guess = -1;
+        currentGuess = -1;
+
     }
 
     public void play() {
@@ -16,16 +17,16 @@ public class NumberGuesser {
 
         do {
             System.out.print(Messages.requestGuess());
-            guess = input.nextInt();
-            checkGuess(guess);
-        } while (guess != secretNumber);
+            currentGuess = input.nextInt();
+            checkGuess(currentGuess);
+        } while (currentGuess != secretNumber);
 
     }
 
-    private void checkGuess(int guess) {
-        if (guess == secretNumber) {
+    private void checkGuess(int currentGuess) {
+        if (currentGuess == secretNumber) {
             System.out.println(Messages.winGame(secretNumber));
-        } else if (guess < secretNumber && guess > 0) {
+        } else if (currentGuess < secretNumber && currentGuess > 0) {
            System.out.println(Messages.low());
         } else {
             System.out.println(Messages.high());
