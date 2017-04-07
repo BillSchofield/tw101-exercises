@@ -20,17 +20,10 @@ public class Main {
 
         List<String> names = root.names();
 
-        System.out.println(String.valueOf(root.left.name));
-        System.out.println(String.valueOf(root.left.name));
-        System.out.println(String.valueOf(root.right.left.name));
-        System.out.println(String.valueOf(root.right.right.name));
-        System.out.println(String.valueOf(root.right.right.left.name));
-        System.out.println(String.valueOf(root.right.right.left.left.name));
-        System.out.println(String.valueOf(root.left.right.name));
+        for (String name : names) {
+            System.out.println(name);
+        }
 
-        //for (String name : names) {
-        //    System.out.println(name);
-        //}
         // ["Bill", "Casey", "Cecil", "Jagruti", "Michelle", "Sara", "Sue-Ellen", "Tess"]
     }
 }

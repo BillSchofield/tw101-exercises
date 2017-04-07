@@ -1,11 +1,12 @@
 package com.thoughtworks.tw101.exercises.exercise9;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Node {
-    public String name;
-    public Node left;
-    public Node right;
+    private String name;
+    private Node left;
+    private Node right;
 
     public Node(String name) {
         this.name = name;
@@ -27,15 +28,32 @@ public class Node {
 
     }
 
-    public boolean leftNodeExists() {
+    private boolean leftNodeExists() {
         return left != null;
     }
 
-    public boolean rightNodeExists() {
+    private boolean rightNodeExists() {
         return right != null;
     }
 
     public List<String> names() {
-        return null;
+        List<String> sortedNamesList = new ArrayList<>();
+
+        return sortNames(sortedNamesList);
     }
+
+    private List<String> sortNames(List names) {
+        if (leftNodeExists()) {
+            left.sortNames(names);
+        }
+
+        names.add(name);
+
+        if (rightNodeExists()) {
+            right.sortNames(names);
+        }
+
+        return names;
+    }
+
 }
