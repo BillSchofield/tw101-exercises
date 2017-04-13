@@ -23,5 +23,7 @@ public class Main {
         for (String name : names) {
             System.out.println(name);
         }
+
+        // ["Bill", "Casey", "Cecil", "Jagruti", "Michelle", "Sara", "Sue-Ellen", "Tess"]
     }
 }
