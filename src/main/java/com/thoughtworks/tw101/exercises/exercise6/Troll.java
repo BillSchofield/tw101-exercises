@@ -4,8 +4,13 @@ package com.thoughtworks.tw101.exercises.exercise6;
  * Created by cgrad01 on 7/10/17.
  */
 public class Troll implements Monster {
-    int hitPoints = 40;
-    String name = "Troll";
+    private int hitPoints;
+    private String name;
+
+    public Troll() {
+        name = "Troll";
+        hitPoints = 40;
+    }
 
     @Override
     public void reportStatus() {
