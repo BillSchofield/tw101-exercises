@@ -1,5 +1,6 @@
 package com.thoughtworks.tw101.exercises.exercise8;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 
 /**
