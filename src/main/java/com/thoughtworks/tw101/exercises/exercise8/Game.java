@@ -25,5 +25,6 @@ public class Game {
             player.guessNumber();
         }
         System.out.println("You win!");
+        System.out.println("Guesses: " + player.getGuesses());
     }
 }
