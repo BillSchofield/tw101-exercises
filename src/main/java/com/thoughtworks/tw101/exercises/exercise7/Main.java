@@ -7,6 +7,8 @@ package com.thoughtworks.tw101.exercises.exercise7;
 public class Main {
 
     public static void main(String[] args) {
-
+        Player corey = new Player();
+        Game newGame = new Game(corey);
+        newGame.play();
     }
 }
