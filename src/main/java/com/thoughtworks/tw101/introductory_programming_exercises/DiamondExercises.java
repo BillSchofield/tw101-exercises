@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class DiamondExercises {
     public static void main(String[] args) {
-        drawAnIsoscelesTriangle(3);
+        drawAnIsoscelesTriangle(5);
 //        drawADiamond(8);
 //        drawADiamondWithYourName(3);
     }
@@ -18,7 +18,7 @@ public class DiamondExercises {
 //           *******
 //          *********
     private static void drawAnIsoscelesTriangle(int n) {
-        for(int i=0; i<=n+1; i+=2){
+        for(int i=0; i<=n+2; i+=2){
             for (int j = 1; j<i+2; j++){
                 if(j==1){
                     for(int k = 0; k<(n-i)+1; k+=2){
