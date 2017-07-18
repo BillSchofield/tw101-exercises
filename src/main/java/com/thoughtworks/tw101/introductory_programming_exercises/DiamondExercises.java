@@ -25,11 +25,11 @@ public class DiamondExercises {
                         System.out.print(" ");
                     }
                 }
-                    System.out.print("*");
-                }
-                System.out.println();
+                System.out.print("*");
             }
+            System.out.println();
         }
+    }
 
 
 
