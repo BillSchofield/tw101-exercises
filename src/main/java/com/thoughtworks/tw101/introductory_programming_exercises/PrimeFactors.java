@@ -6,32 +6,23 @@ package com.thoughtworks.tw101.introductory_programming_exercises;
 //
 //  For example, generate(1) should return an empty list and generate(30) should return the numbers: 2,3,5.
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PrimeFactors {
     public static void main(String[] args) {
-        List<Integer> primeFactors = generate(30);
-        List<Integer> primeFactors2 = generate(34);
-        List<Integer> primeFactors3 = generate(36);
-        List<Integer> primeFactors4 = generate(5);
-        List<Integer> primeFactors5 = generate(2);
-        System.out.println(primeFactors);
-        System.out.println(primeFactors2);
-        System.out.println(primeFactors3);
-        System.out.println(primeFactors4);
-        System.out.println(primeFactors5);
+        System.out.println(generate(30));
+        System.out.println(generate(1));
+        System.out.println(generate(8987));
     }
+
 
     private static List<Integer> generate(int n) {
         ArrayList<Integer> factors = getFactors(n);
-        ArrayList<Integer> results = new ArrayList<>(factors);
+        ArrayList<Integer> results = getFactors(n);
         for(int factor : factors){
-            ArrayList<Integer> moreFactors = getFactors(factor);
-            if(moreFactors.size() > 0){
-                results.remove(factors.indexOf(factor));
-                results.addAll(moreFactors);
+            if(getFactors(factor).size() > 0){
+                results.remove(results.indexOf(factor));
             }
         }
         return results;
@@ -46,5 +37,7 @@ public class PrimeFactors {
         }
         return factors;
     }
+
+
 
 }
