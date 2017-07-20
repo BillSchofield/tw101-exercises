@@ -16,28 +16,14 @@ public class PrimeFactors {
         System.out.println(generate(8987));
     }
 
-
-    private static List<Integer> generate(int n) {
-        ArrayList<Integer> factors = getFactors(n);
-        ArrayList<Integer> results = getFactors(n);
-        for(int factor : factors){
-            if(getFactors(factor).size() > 0){
-                results.remove(results.indexOf(factor));
-            }
-        }
-        return results;
-    }
-
-    private static ArrayList<Integer> getFactors(int n){
+    private static ArrayList<Integer> generate(int n){
         ArrayList<Integer> factors = new ArrayList<>();
         for(int i = 2; i < n; i++){
-            if(n%i==0){
+            if(n%i==0 && generate(i).size()==0){
                 factors.add(i);
             }
         }
         return factors;
     }
-
-
 
 }
