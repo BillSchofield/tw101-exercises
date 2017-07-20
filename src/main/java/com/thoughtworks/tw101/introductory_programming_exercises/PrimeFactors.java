@@ -16,7 +16,7 @@ public class PrimeFactors {
         System.out.println(generate(8987));
     }
 
-    private static ArrayList<Integer> generate(int n){
+    private static List<Integer> generate(int n){
         ArrayList<Integer> factors = new ArrayList<>();
         for(int i = 2; i < n; i++){
             if(n%i==0 && generate(i).size()==0){
