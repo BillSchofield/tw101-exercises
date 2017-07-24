@@ -18,9 +18,7 @@ public class DiamondExercises {
         for(int i=0; i<=n+2; i+=2){
             for (int j = 1; j<i+2; j++){
                 if(j==1){
-                    for(int k = 0; k<(n-i)+1; k+=2){
-                        System.out.print(" ");
-                    }
+                    addSpaces(n-i);
                 }
                 System.out.print("*");
             }
@@ -32,9 +30,7 @@ public class DiamondExercises {
         for(int i=0; i < n+2; i+=2){
             for(int j = 1; j<=n-i+1-n%2; j++){
                 if(j==1) {
-                    for (int k = 0; k <= i; k += 2) {
-                        System.out.print(" ");
-                    }
+                    addSpaces(i);
                 }
                 System.out.print("*");
             }
@@ -67,9 +63,7 @@ public class DiamondExercises {
         for(int i=0; i<=n+2; i+=2){
             for (int j = 1; j<i+2; j++){
                 if(j==1){
-                    for(int k = 0; k<(n-i)+1; k+=2){
-                        System.out.print(" ");
-                    }
+                    addSpaces(n-i);
                 }
                 if(i==n+2-n%2){
                     System.out.print("Corey");
@@ -82,5 +76,12 @@ public class DiamondExercises {
             System.out.println();
         }
         drawAnUpsideDownTriangle(n);
+    }
+
+//    extracted addSpaces(), bloater.
+    public static void addSpaces(int i) {
+        for (int k = 0; k <= i; k += 2) {
+            System.out.print(" ");
+        }
     }
 }
