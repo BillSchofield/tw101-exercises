@@ -65,14 +65,12 @@ public class DiamondExercises {
                 if(j==1){
                     addSpaces(n-i);
                 }
-                if(i==n+2-n%2){
-                    System.out.print("Corey");
+                if(isMiddle(i,n)){
+                    printName();
                     break;
-                } else {
+                }
                     System.out.print("*");
                 }
-
-            }
             System.out.println();
         }
         drawAnUpsideDownTriangle(n);
@@ -83,5 +81,13 @@ public class DiamondExercises {
         for (int k = 0; k <= i; k += 2) {
             System.out.print(" ");
         }
+    }
+//  extracted printName and isMiddle, bloater.
+    public static void printName(){
+        System.out.print("Corey");
+    }
+
+    public static boolean isMiddle(int i, int n){
+        return i==n+2-n%2;
     }
 }
