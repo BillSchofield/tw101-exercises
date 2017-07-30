@@ -6,38 +6,41 @@ public class Node {
     private String name;
     private Node left;
     private Node right;
-    private String parent;
 
     public Node(String name) {
         this.name = name;
     }
 
     public void add(String nameOfNewNode) {
-        boolean placed = false;
-        Node newNode = new Node(nameOfNewNode);
-        while (!placed){
-            if(name.compareTo(newNode.name) >= 1 && left == null){
-                left = newNode;
-                placed = true;
+        if(name.compareTo(nameOfNewNode) >= 1){
+            if(left == null){
+                left = new Node(nameOfNewNode);
+            } else {
+                left.add(nameOfNewNode);
             }
-            else if(name.compareTo(newNode.name) <= -1 && right == null){
-                right = newNode;
-                placed = true;
+        }
+        else if(name.compareTo(nameOfNewNode) <= -1){
+            if(right == null){
+                right = new Node(nameOfNewNode);
+            } else {
+                right.add(nameOfNewNode);
             }
         }
     }
 
-    public List<String> names() {
-        return null;
-    }
+//    public List<String> names() {
+//        return null;
+//    }
 
     public static void main(String[] args){
         Node root = new Node("Cecil");
         root.add("Michelle");
         root.add("Bill");
-//        root.add("Jagruti");
+        root.add("Jagruti");
         System.out.println(root.left.name);
         System.out.println(root.right.name);
+        System.out.println(root.right.left.name);
+
     }
 
 }
