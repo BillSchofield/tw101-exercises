@@ -1,8 +1,10 @@
 package com.thoughtworks.tw101.exercises.exercise9;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Node {
+    private ArrayList<String> names = new ArrayList<>();
     private String name;
     private Node left;
     private Node right;
@@ -28,19 +30,22 @@ public class Node {
         }
     }
 
-//    public List<String> names() {
-//        return null;
-//    }
+    public List<String> names() {
+        if(left==null){
+            System.out.println("Adding " + name);
+            names.add(name);
+            return names;
+        } else {
+            left.names();
+        }
+    }
 
     public static void main(String[] args){
         Node root = new Node("Cecil");
         root.add("Michelle");
         root.add("Bill");
         root.add("Jagruti");
-        System.out.println(root.left.name);
-        System.out.println(root.right.name);
-        System.out.println(root.right.left.name);
-
+        System.out.println(root.names());
     }
 
 }
