@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Node {
-    private ArrayList<String> names = new ArrayList<>();
+    private ArrayList<String> namesList = new ArrayList<>();
     private String name;
     private Node left;
     private Node right;
@@ -31,21 +31,14 @@ public class Node {
     }
 
     public List<String> names() {
-        if(left==null){
-            System.out.println("Adding " + name);
-            names.add(name);
-            return names;
-        } else {
-            left.names();
+        if (left != null) {
+            namesList.addAll(left.names());
         }
-    }
-
-    public static void main(String[] args){
-        Node root = new Node("Cecil");
-        root.add("Michelle");
-        root.add("Bill");
-        root.add("Jagruti");
-        System.out.println(root.names());
+        namesList.add(name);
+        if(right != null) {
+            namesList.addAll(right.names());
+        }
+        return namesList;
     }
 
 }
